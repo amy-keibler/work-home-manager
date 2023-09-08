@@ -14,13 +14,65 @@
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    direnv
     gh
 
     # Amazon
     aws-vault
     kubectl
   ];
+
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+
+    historySize = 1000;
+    historyFileSize = 2000;
+    historyControl = [ "ignoredups" "ignorespace" ];
+
+    shellAliases = {
+      vpn_start = "openvpn3 session-start --config ~/.openvpn3/sonatype_vpn.ovpn";
+      vpn_stop = "openvpn3 session-manage --disconnect --config ~/.openvpn3/sonatype_vpn.ovpn";
+      vpn_status = "openvpn3 sessions-list";
+      vpn_restart = "vpn_stop && vpn_start";
+    };
+
+    bashrcExtra = ''
+      export PATH=/home/amy/.local/bin/:/home/amy/.docker/cli-plugins:$PATH
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+      #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+      export SDKMAN_DIR="$HOME/.sdkman"
+      [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+    '';
+
+    profileExtra = ''
+      # Added by Toolbox App
+export PATH="$PATH:/home/amy/.local/share/JetBrains/Toolbox/scripts"
+    '';
+  };
+
+  programs.direnv.enable = true;
+
+  # man pages were causing issues with locale
+  programs.man.enable = false;
+  home.extraOutputsToInstall = [ "man" ];
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      kubernetes = {
+        disabled = true;
+      };
+    };
+  };
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -35,18 +87,11 @@
     # '';
   };
 
-  # You can also manage environment variables but you will have to manually
-  # source
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/amy/etc/profile.d/hm-session-vars.sh
-  #
-  # if you don't want to manage your shell through Home Manager.
+  home.language = {
+    base = "en_US.utf-8";
+  };
+
   home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
