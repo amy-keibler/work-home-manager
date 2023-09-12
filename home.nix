@@ -34,6 +34,7 @@
     historyControl = [ "ignoredups" "ignorespace" ];
 
     shellAliases = {
+      # likely won't need these once switched over to a Mac
       vpn_start = "openvpn3 session-start --config ~/.openvpn3/sonatype_vpn.ovpn";
       vpn_stop = "openvpn3 session-manage --disconnect --config ~/.openvpn3/sonatype_vpn.ovpn";
       vpn_status = "openvpn3 sessions-list";
@@ -41,6 +42,7 @@
     };
 
     bashrcExtra = ''
+      # Likely won't need this once switched over to a Mac
       export PATH=/home/amy/.local/bin/:/home/amy/.docker/cli-plugins:$PATH
 
       export NVM_DIR="$HOME/.nvm"
@@ -59,6 +61,20 @@ export PATH="$PATH:/home/amy/.local/share/JetBrains/Toolbox/scripts"
   };
 
   programs.direnv.enable = true;
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+
+    userName = "Amelia Keibler";
+    userEmail = "akeibler@sonatype.com";
+
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
+  };
 
   # man pages were causing issues with locale
   programs.man.enable = false;
@@ -89,17 +105,11 @@ export PATH="$PATH:/home/amy/.local/share/JetBrains/Toolbox/scripts"
     defaultRegion = "us-east-1";
 
     profiles = {
-      sonatype-ops = {
+      sonatype-ops = { };
 
-      };
+      sonatype = { };
 
-      sonatype = {
-        
-      };
-
-      ops = {
-        
-      };
+      ops = { };
 
       dev = {
         role = {
