@@ -9,3 +9,6 @@ software (that is not currently available via `nixpkgs`):
 - [`nvm` (Node Version Manager)](https://github.com/nvm-sh/nvm)
 - [`sdk` (SdkMan)](https://sdkman.io/)
 
+## Usage
+
+On first setup, run `nix run home-manager/master -- init --switch`. After that, run `home-manager switch`.

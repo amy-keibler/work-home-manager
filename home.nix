@@ -23,6 +23,10 @@
     # Amazon
     awscli2
     kubectl
+
+    # Java
+    jdk17
+    maven
   ];
 
   programs.bash = {
@@ -188,6 +192,8 @@ export PATH="$PATH:/home/amy/.local/share/JetBrains/Toolbox/scripts"
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".spacemacs".source = dotfiles/.spacemacs;
   };
 
   home.language = {
