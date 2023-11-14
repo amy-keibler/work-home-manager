@@ -23,7 +23,7 @@
       };
       packages."aarch64-darwin" = {
         homeConfigurations."amy" = home-manager.lib.homeManagerConfiguration {
-          pkgs = linuxPkgs;
+          pkgs = macPkgs;
           modules = [ ./home_mac.nix ];
         };
       };

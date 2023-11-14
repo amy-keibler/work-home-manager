@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
-{
+rec {
   imports = [
     ./common/aws.nix
     ./common/cli.nix
+    ./common/emacs.nix
     ./common/git.nix
     ./common/java.nix
   ];
@@ -22,6 +23,11 @@
 
   programs.zsh = {
     enable = true;
+    defaultKeymap = "emacs";
+
+    sessionVariables = {
+      PATH = "$PATH:${home.homeDirectory}/.config/emacs/bin";
+    };
   };
 
   # Let Home Manager install and manage itself.
