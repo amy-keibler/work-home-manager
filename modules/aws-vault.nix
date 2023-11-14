@@ -16,9 +16,10 @@ let
       mfa_serial = mfaSerial;
     };
 
-  mkConfig = { userName, userIamNumber, defaultRegion, profiles, ... }: let
-    mfaSerial = "arn:aws:iam::${userIamNumber}:mfa/${userName}";
-  in
+  mkConfig = { userName, userIamNumber, defaultRegion, profiles, ... }:
+    let
+      mfaSerial = "arn:aws:iam::${userIamNumber}:mfa/${userName}";
+    in
     mapAttrs' (profileName: profile: nameValuePair "profile ${profileName}" (mkProfile ({ inherit mfaSerial defaultRegion; } // profile))) profiles;
 
 in
