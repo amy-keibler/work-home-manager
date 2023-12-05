@@ -25,5 +25,5 @@
 
   fonts.fontconfig.enable = true;
 
-  home.sessionVariables.FONTCONFIG_FILE="${pkgs.fontconfig.out}/etc/fonts/fonts.conf";
+  home.sessionVariables.FONTCONFIG_FILE = "${pkgs.fontconfig.out}/etc/fonts/fonts.conf";
 }

@@ -20,11 +20,17 @@
     defaultRegion = "us-east-1";
 
     profiles = {
-      sonatype-ops = { };
+      default = {
+        region = "us-west-2";
+      };
 
-      sonatype = { };
+      sonatype-ops = {
+        sourceProfile = "default";
+      };
 
-      ops = { };
+      sonatype = {
+        sourceProfile = "default";
+      };
 
       dev = {
         role = {
@@ -42,6 +48,7 @@
         sourceProfile = "sonatype-ops";
       };
 
+      # Main Central AWS Account
       sonatype-central = {
         role = {
           name = "admin";
@@ -84,10 +91,6 @@
         };
         region = "us-west-2";
         sourceProfile = "sonatype-ops";
-      };
-
-      default = {
-        region = "us-west-2";
       };
     };
   };

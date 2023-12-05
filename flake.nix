@@ -11,8 +11,8 @@
 
   outputs = { nixpkgs, flake-utils, home-manager, ... }:
     let
-      linuxPkgs = nixpkgs.legacyPackages."x86_64-linux";
-      macPkgs = nixpkgs.legacyPackages."aarch64-darwin";
+      linuxPkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
+      macPkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
     in
     {
       packages."x86_64-linux" = {
