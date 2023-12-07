@@ -28,21 +28,21 @@ in
     enable = mkEnableOption (mdDoc "Amazon AWS Vault Manager");
 
     userName = mkOption {
-      type = types.string;
+      type = types.str;
       description = ''
         AWS Username
       '';
     };
 
     userIamNumber = mkOption {
-      type = types.string;
+      type = types.str;
       description = ''
         AWS IAM ID Number
       '';
     };
 
     defaultRegion = mkOption {
-      type = types.string;
+      type = types.str;
       description = ''
         Default AWS region to use if none is specified
       '';
