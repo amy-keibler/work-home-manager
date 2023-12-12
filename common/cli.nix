@@ -17,6 +17,12 @@
     defaultEditor = true;
   };
 
+  home.packages = with pkgs; [
+    jq
+    kickstart
+    nixpkgs-fmt
+  ];
+
   # man pages were causing issues with locale
   programs.man.enable = false;
   home.extraOutputsToInstall = [ "man" ];

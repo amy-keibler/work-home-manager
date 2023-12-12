@@ -6,6 +6,7 @@
     ./common/cli.nix
     ./common/git.nix
     ./common/java.nix
+    ./common/javascript.nix
   ];
 
   home.username = "amy";

@@ -8,6 +8,7 @@ rec {
     ./common/emacs.nix
     ./common/git.nix
     ./common/java.nix
+    ./common/javascript.nix
 
     # mac-specific modules
     ./mac/docker.nix
