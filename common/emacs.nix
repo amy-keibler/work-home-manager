@@ -15,6 +15,11 @@
     pandoc
     ripgrep
     shellcheck
+
+    # formatting and other tools
+    cargo
+    rustc
+    rustfmt
   ];
 
   home.file = {

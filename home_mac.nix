@@ -12,7 +12,6 @@ rec {
 
     # mac-specific modules
     ./mac/docker.nix
-    ./mac/mongodb.nix
   ];
 
   home.username = "amy";
