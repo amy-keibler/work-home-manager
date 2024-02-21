@@ -79,7 +79,6 @@
 (add-hook! 'markdown-mode-hook 'turn-on-auto-fill)
 
 ;; Set the Rust formatter to use cargo fmt instead of rustfmt
-;; TODO: This doesn't quite work
 ;; (after! apheleia
-;;  (setf (alist-get 'rustfmt apheleia-formatters)
-;;        '("cargo" "--quiet" "fmt" "--" "--quiet" "--emit" "stdout")))
+;; (setf (alist-get 'rustfmt apheleia-formatters)
+;; '("apheleia-from-project-root" "Cargo.lock" "cargo" "--quiet" "fmt" "--" "--quiet" "--emit" "stdout")))
