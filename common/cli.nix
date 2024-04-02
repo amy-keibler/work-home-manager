@@ -21,6 +21,7 @@
     jq
     kickstart
     nixpkgs-fmt
+    tokei
   ];
 
   # man pages were causing issues with locale

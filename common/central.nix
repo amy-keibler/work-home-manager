@@ -6,5 +6,6 @@
     hexyl
     mkcert
     mongosh
+    redis
   ];
 }

@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     awscli2
     kubectl
+    ssm-session-manager-plugin
   ];
 
   # Work AWS
