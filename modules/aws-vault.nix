@@ -10,6 +10,7 @@ let
   mkProfile = { mfaSerial, defaultRegion, ... }@profileArgs:
     (optionalAttrs (hasAttr "role" profileArgs) { role_arn = mkRoleArn profileArgs.role; }) //
     (optionalAttrs (hasAttr "sourceProfile" profileArgs) { source_profile = profileArgs.sourceProfile; }) //
+    (optionalAttrs (hasAttr "credentialProcess" profileArgs) { credential_process = profileArgs.credentialProcess; }) //
     {
       region = if (hasAttr "region" profileArgs) then profileArgs.region else defaultRegion;
       output = "json";

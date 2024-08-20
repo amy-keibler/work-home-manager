@@ -57,6 +57,13 @@
         };
         region = "us-west-2";
         sourceProfile = "sonatype-ops";
+        credentialProcess = "aws-vault exec --duration 12h --json sonatype-central";
+      };
+
+      sdk-sonatype-central = {
+        region = "us-west-2";
+        sourceProfile = "sonatype-central";
+        credentialProcess = "aws-vault exec --duration 12h --json sonatype-central";
       };
 
       central-dev = {
