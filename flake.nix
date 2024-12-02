@@ -19,12 +19,12 @@
     let
       linuxPkgs = import nixpkgs rec {
         system = "x86_64-linux";
-        overlays = [ kickstart.overlays.${system}.kickstart ];
+        overlays = [ (_final: _prev:  { kickstart = kickstart.packages.${system}.kickstart; } ) ];
         config.allowUnfree = true;
       };
       macPkgs = import nixpkgs rec {
         system = "aarch64-darwin";
-        overlays = [ kickstart.overlays.${system}.kickstart ];
+        overlays = [ (_final: _prev:  { kickstart = kickstart.packages.${system}.kickstart; } ) ];
         config.allowUnfree = true;
       };
     in
