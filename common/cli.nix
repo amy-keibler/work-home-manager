@@ -21,6 +21,7 @@
     jq
     kickstart
     nixpkgs-fmt
+    sequoia-sq
     tokei
   ];
 

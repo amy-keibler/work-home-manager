@@ -5,9 +5,9 @@
     emacs
 
     # Doom Emacs
+    aspell
     coreutils-prefixed
     fd
-    ispell
     fontconfig
     gnugrep
     mdl
