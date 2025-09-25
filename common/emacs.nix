@@ -6,6 +6,7 @@
 
     # Doom Emacs
     aspell
+    aspellDicts.en
     coreutils-prefixed
     fd
     fontconfig
