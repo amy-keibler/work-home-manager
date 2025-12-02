@@ -9,24 +9,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    kickstart = {
-      url = "github:amy-keibler/kickstart";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
-  outputs = { nixpkgs, flake-utils, home-manager, kickstart, ... }:
+  outputs = { nixpkgs, flake-utils, home-manager, ... }:
     let
       linuxPkgs = import nixpkgs rec {
         system = "x86_64-linux";
-        overlays = [ (_final: _prev:  { kickstart = kickstart.packages.${system}.kickstart; } ) ];
         config.allowUnfree = true;
       };
       macPkgs = import nixpkgs rec {
         system = "aarch64-darwin";
-        overlays = [ (_final: _prev:  { kickstart = kickstart.packages.${system}.kickstart; } ) ];
         config.allowUnfree = true;
       };
     in

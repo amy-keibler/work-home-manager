@@ -5,10 +5,12 @@
     enable = true;
     lfs.enable = true;
 
-    userName = "Amelia Keibler";
-    userEmail = "akeibler@sonatype.com";
+    settings = {
+      user = {
+        name = "Amelia Keibler";
+        email = "akeibler@sonatype.com";
+      };
 
-    extraConfig = {
       init = {
         defaultBranch = "main";
       };

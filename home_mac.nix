@@ -5,13 +5,11 @@ rec {
     ./common/aws.nix
     ./common/central.nix
     ./common/cli.nix
+    ./common/data-identity.nix
     ./common/emacs.nix
     ./common/git.nix
     ./common/java.nix
     ./common/javascript.nix
-
-    # mac-specific modules
-#    ./mac/docker.nix
   ];
 
   home.username = "amy";

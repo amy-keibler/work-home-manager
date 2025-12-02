@@ -33,6 +33,14 @@
         sourceProfile = "default";
       };
 
+      pipeline-dev = {
+        sourceProfile = "default";
+        role = {
+          name = "pipeline-dev";
+          iamNumber = "732481404831";
+        };
+      };
+
       dev = {
         role = {
           name = "admin";
