@@ -10,6 +10,7 @@ rec {
     ./common/git.nix
     ./common/java.nix
     ./common/javascript.nix
+    ./common/python.nix
   ];
 
   home.username = "amy";
