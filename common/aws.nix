@@ -33,14 +33,6 @@
         sourceProfile = "default";
       };
 
-      pipeline-dev = {
-        sourceProfile = "default";
-        role = {
-          name = "pipeline-dev";
-          iamNumber = "732481404831";
-        };
-      };
-
       dev = {
         role = {
           name = "admin";
@@ -49,12 +41,55 @@
         sourceProfile = "sonatype";
       };
 
+      cloudy = {
+        role = {
+          name = "cloudy-mccloudface-stable-central";
+          iamNumber = "119982741445";
+        };
+        region = "us-east-2";
+        sourceProfile = "sonatype";
+      };
+
+      betacloud = {
+        role = {
+          name = "cloudy-mccloudface-beta-central";
+          iamNumber = "119982741445";
+        };
+        region = "us-west-2";
+        sourceProfile = "sonatype-ops";
+      };
+
       prod-admins = {
         role = {
           name = "admin";
           iamNumber = "488733969274";
         };
         sourceProfile = "sonatype-ops";
+      };
+
+      # Data Identity
+      pipeline-dev = {
+        sourceProfile = "default";
+        role = {
+          name = "pipeline-dev";
+          iamNumber = "732481404831";
+        };
+      };
+
+      hds-production-datamart-data-dev = {
+        sourceProfile = "default";
+        role = {
+          name = "DatamartIamAuth-data-dev";
+          iamNumber = "135388973902";
+        };
+      };
+
+      hds-staging-datamart-data-dev = {
+        sourceProfile = "default";
+        role = {
+          name = "DatamartIamAuth-data-dev";
+          iamNumber = "993883856687";
+        };
       };
 
       # Main Central AWS Account
@@ -82,15 +117,6 @@
         sourceProfile = "sonatype-ops";
       };
 
-      cloudy = {
-        role = {
-          name = "cloudy-mccloudface-stable-central";
-          iamNumber = "119982741445";
-        };
-        region = "us-east-2";
-        sourceProfile = "sonatype";
-      };
-
       stargate = {
         role = {
           name = "admin";
@@ -98,15 +124,6 @@
         };
         region = "us-east-2";
         sourceProfile = "sonatype";
-      };
-
-      betacloud = {
-        role = {
-          name = "cloudy-mccloudface-beta-central";
-          iamNumber = "119982741445";
-        };
-        region = "us-west-2";
-        sourceProfile = "sonatype-ops";
       };
     };
   };
