@@ -4,6 +4,7 @@ rec {
   imports = [
     ./common/aws.nix
     ./common/central.nix
+    ./common/claude.nix
     ./common/cli.nix
     ./common/data-identity.nix
     ./common/emacs.nix
