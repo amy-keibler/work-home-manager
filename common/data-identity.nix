@@ -7,5 +7,8 @@
 
     # SVS
     postgresql_14
+
+    # Security Tooling
+    dotnet-sdk_10
   ];
 }

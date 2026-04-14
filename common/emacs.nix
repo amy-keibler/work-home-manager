@@ -18,6 +18,7 @@
     pandoc
     ripgrep
     shellcheck
+    # symbola # commented out due to failing
 
     # formatting and other tools
     cargo
@@ -26,9 +27,10 @@
   ];
 
   home.file = {
-    ".config/doom/init.el".source = ../dotfiles/doom/init.el;
-    ".config/doom/config.el".source = ../dotfiles/doom/config.el;
-    ".config/doom/packages.el".source = ../dotfiles/doom/packages.el;
+    ".config/doom/" = {
+      source = ../dotfiles/doom;
+      recursive = true;
+    };
   };
 
   fonts.fontconfig.enable = true;

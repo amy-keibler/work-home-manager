@@ -15,6 +15,10 @@
         defaultBranch = "main";
       };
     };
+
+    signing = {
+      format = "openpgp";
+    };
   };
 
   home.packages = with pkgs; [
