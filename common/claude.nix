@@ -13,7 +13,7 @@
   programs.zsh = {
     sessionVariables = {
       CLAUDE_CODE_ENABLE_TELEMETRY = "1";
-      ANTHROPIC_BASE_URL = "https://llm-dev.sonatype.com";
+      ANTHROPIC_BASE_URL = "https://llm.sonatype.com";
 
       # Models
       ANTHROPIC_MODEL = "glm-5";
@@ -39,6 +39,7 @@
   };
 
   home.file = {
+    ".claude/CLAUDE.md" = { source = ../dotfiles/claude/CLAUDE.md; };
     ".claude/skills/" = {
       source = ../dotfiles/claude/skills;
       recursive = true;
