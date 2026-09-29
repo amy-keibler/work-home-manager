@@ -25,16 +25,19 @@ rec {
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   # home.stateVersion = "24.11"; # Please read the comment before changing.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  # home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
   programs.zsh = {
     enable = true;
     defaultKeymap = "emacs";
 
-    sessionVariables = {
-      PATH = "$PATH:${home.homeDirectory}/.config/emacs/bin";
-    };
+
   };
+
+  home.sessionPath = [
+    "${home.homeDirectory}/.config/emacs/bin"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

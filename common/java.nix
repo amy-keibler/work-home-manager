@@ -7,7 +7,7 @@
 
   programs.zsh = {
     sessionVariables = rec {
-      JAVA_HOME = JAVA_17_HOME;
+      JAVA_HOME = JAVA_21_HOME;
       JAVA_8_HOME = "${pkgs.jdk8}";
       JAVA_11_HOME = "${pkgs.jdk11}";
       JAVA_17_HOME = "${pkgs.jdk17}";

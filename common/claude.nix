@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }:
 
+let
+  sonnetModel = "claude-sonnet-5-5";
+  opusModel = "claude-opus-5-5";
+  haikuModel = "kimi-k2-5";
+in
 {
   home.packages = with pkgs; [
     claude-code
@@ -16,11 +21,11 @@
       ANTHROPIC_BASE_URL = "https://llm.sonatype.com";
 
       # Models
-      ANTHROPIC_MODEL = "glm-5";
-      ANTHROPIC_DEFAULT_HAIKU_MODEL = "kimi-k2-5";
-      ANTHROPIC_DEFAULT_SONNET_MODEL = "claude-sonnet-4-6";
-      ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-7";
-      CLAUDE_CODE_SUBAGENT_MODEL = "glm-5";
+      ANTHROPIC_MODEL = sonnetModel;
+      ANTHROPIC_DEFAULT_HAIKU_MODEL = haikuModel;
+      ANTHROPIC_DEFAULT_SONNET_MODEL = sonnetModel;
+      ANTHROPIC_DEFAULT_OPUS_MODEL = opusModel;
+      CLAUDE_CODE_SUBAGENT_MODEL = sonnetModel;
 
       # Experiment flags
       CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1";

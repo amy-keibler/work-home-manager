@@ -7,9 +7,9 @@
   branch does not yet exist, ask the user for permission to create one before
   asking permission to commit.
 
-## Java Version Selection
+## Writing Expectations
 
-Java versions are provided by zsh aliases (e.g. useJdk21, useJdk17). Claude
-should always prefer sourcing the `~/.zshrc` file and calling the alias over
-searching for available Java versions. If an alias does not exist, prompt the
-user to create one before retrying.
+- When writing a comment that will be posted under my account (e.g. a GitHub
+  comment that will be associated with my GitHub account), indicate clearly when
+  work was done by Claude and not the human. Avoid using "I" statements and
+  prefer the third-person (e.g. "Claude analyzed the logs and identified ...").

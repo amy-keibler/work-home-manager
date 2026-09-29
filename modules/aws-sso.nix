@@ -34,6 +34,14 @@ let
       mkLoginCommand = profileName: ''aws sso login --profile "${profileName}" && export AWS_PROFILE="${profileName}"'';
     in
     mapAttrs' (profileName: _: nameValuePair (mkAliasName profileName) (mkLoginCommand profileName)) profiles;
+
+  mkProfileAssumeRoleShellAliases = { profiles, ... }:
+    let
+      mkAliasName = profileName: "aws-assume-role-${profileName}";
+      mkAssumeCommand = profileName: ''export AWS_PROFILE="${profileName}"'';
+    in
+    mapAttrs' (profileName: _: nameValuePair (mkAliasName profileName) (mkAssumeCommand profileName)) profiles;
+
 in
 {
   options.programs.aws-sso = {
@@ -65,6 +73,6 @@ in
       text = generators.toINI { } (mkConfig cfg);
     };
 
-    programs.zsh.shellAliases = mkProfileLoginShellAliases cfg;
+    programs.zsh.shellAliases = mkProfileLoginShellAliases cfg // mkProfileAssumeRoleShellAliases cfg;
   };
 }
