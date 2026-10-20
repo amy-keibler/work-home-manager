@@ -11,6 +11,7 @@ rec {
     ./common/git.nix
     ./common/java.nix
     ./common/javascript.nix
+    ./common/pi-coding-agent.nix
     ./common/python.nix
   ];
 

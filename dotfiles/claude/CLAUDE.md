@@ -1,11 +1,15 @@
 # Claude Configuration
 
-## Git Behavior Expectations
+## Git / GitHub Behavior Expectations
 
 - Commits should be made off of a feature branch by default. The user will
   explicitly indicate if a commit should be made against main or master. If a
   branch does not yet exist, ask the user for permission to create one before
   asking permission to commit.
+- When asked for stacked PRs, create a native GitHub Stack with the official
+  `gh stack` extension (`gh extension install github/gh-stack`), e.g.
+  `gh stack init <branches...>` then `gh stack submit`, or `gh stack link` for
+  existing PRs. PRs chained only by base branch don't count as a stack.
 
 ## Writing Expectations
 

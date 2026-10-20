@@ -18,6 +18,7 @@ in
   programs.zsh = {
     sessionVariables = {
       CLAUDE_CODE_ENABLE_TELEMETRY = "1";
+      CLAUDE_CODE_ENABLE_TELEMETRY_BETA = "1";
       ANTHROPIC_BASE_URL = "https://llm.sonatype.com";
 
       # Models
@@ -27,9 +28,17 @@ in
       ANTHROPIC_DEFAULT_OPUS_MODEL = opusModel;
       CLAUDE_CODE_SUBAGENT_MODEL = sonnetModel;
 
+      # OpenTelemetry
+      OTEL_METRICS_EXPORTER = "otlp";
+      OTEL_LOGS_EXPORTER = "otlp";
+      OTEL_TRACES_EXPORTER = "otlp";
+      OTEL_EXPORTER_OTLP_PROTOCOL = "http/protobuf";
+      OTEL_EXPORTER_OTLP_ENDPOINT = "https://app.workweave.ai/ingest";
+      OTEL_LOG_USER_PROMPTS = "1";
+      OTEL_LOG_TOOL_DETAILS = "1";
+      OTEL_RESOURCE_ATTRIBUTES = "weave.token=wcckey_75AuqRHhkNNm0kACn4uZfO06,user.email=akeibler@sonatype.com";
       # Experiment flags
       CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1";
-      CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS = "1";
     };
 
     envExtra = ''

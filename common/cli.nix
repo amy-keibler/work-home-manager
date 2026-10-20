@@ -15,6 +15,9 @@
   programs.vim = {
     enable = true;
     defaultEditor = true;
+
+    # Don't include full GUI Vim
+    packageConfigurable = pkgs.vim;
   };
 
   home.packages = with pkgs; [
