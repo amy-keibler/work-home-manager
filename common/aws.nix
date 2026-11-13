@@ -24,12 +24,22 @@
       };
 
       hds-production-datamart-data-dev = {
-        name = "DatamartReadOnly-Prod";
+        name = "HDS-rds-data-dev";
         iamNumber = "135388973902";
       };
 
       hds-staging-datamart-data-dev = {
-        name = "DatamartReadOnly-Stage";
+        name = "HDS-rds-data-dev";
+        iamNumber = "993883856687";
+      };
+
+      hds-production-admin = {
+        name = "DataTeamAdministratorAccess";
+        iamNumber = "135388973902";
+      };
+
+      hds-staging-admin = {
+        name = "DataTeamAdministratorAccess";
         iamNumber = "993883856687";
       };
     };

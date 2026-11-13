@@ -21,12 +21,13 @@
   };
 
   home.packages = with pkgs; [
+    dust
     jq
     kickstart
     nixpkgs-fmt
+    pydf
     sequoia-sq
     tokei
-    dust
   ];
 
   # man pages were causing issues with locale

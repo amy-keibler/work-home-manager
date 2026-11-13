@@ -17,3 +17,15 @@
   comment that will be associated with my GitHub account), indicate clearly when
   work was done by Claude and not the human. Avoid using "I" statements and
   prefer the third-person (e.g. "Claude analyzed the logs and identified ...").
+
+## Shared Pages
+
+Sonatype uses LiteLLM for Claude, which does not support publishing shared pages
+using the Artifact capability. Please always create artifacts locally and
+provide the file path in the console for convenience.
+
+## Responses
+
+When sending a response to the user that includes a JIRA ticket ID or a GitHub
+PR number, please make sure that at least the first reference is a clickable
+link. This will make it easier for me to open the link in the browser.
